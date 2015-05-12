@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph __version="3.5.0" author="Marek" created="Wed Feb 25 15:46:44 CET 2015" description="List&lt;RepositoryCommit&gt; To Map" guiVersion="3.4.4.P" id="1424875822327" licenseCode="Unlicensed" licenseType="Unknown" modified="Wed Feb 25 15:46:44 CET 2015" modifiedBy="Marek" name="List_RepositoryCommit__To_Map" revision="1.0" showComponentDetails="false">
+<Global>
+<Metadata __index="0" __referenceCounter="1" __sourcePath="{}/commits" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _type="Output" id="803c8a23-b870-4a48-8d1a-03162663fe68">
+<Record fieldDelimiter="," name="commits" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="1" __sourcePath="{}/commits/comment" containerType="SINGLE" label="comment" name="comment" type="string"/>
+<Field __index="0" __sourcePath="{}/commits/name" containerType="SINGLE" label="name" name="name" type="string"/>
+<Field __sourcePath="{}/commits/url" containerType="SINGLE" label="url" name="url" type="string"/>
+<Field __sourcePath="{}/commits/date" containerType="SINGLE" label="date" name="date" type="date"/>
+<Field __sourcePath="{}/commits/sha" containerType="SINGLE" label="sha" name="sha" type="string"/>
+<Field __sourcePath="{}/commits/author" containerType="SINGLE" label="author" name="author" type="string"/>
+<Field __sourcePath="{}/commits/issue" containerType="SINGLE" label="issue" name="issue" type="string"/>
+<Field __sourcePath="{}/commits/duration" containerType="SINGLE" label="duration" name="duration" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="72" __referenceCounter="1" __sourcePath="{}/list/files" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="bac09959-65ff-4f19-9b96-6922f9884ea1" _parent_id="__parent_id" _type="Input" id="fa257964-5cd7-4e59-9680-29a6c825d248">
+<Record fieldDelimiter="," name="files" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __index="72" __sourcePath="{}/list/files/additions" containerType="SINGLE" label="additions" name="additions" type="integer"/>
+<Field __index="73" __sourcePath="{}/list/files/blobUrl" containerType="SINGLE" label="blobUrl" name="blobUrl" type="string"/>
+<Field __index="74" __sourcePath="{}/list/files/changes" containerType="SINGLE" label="changes" name="changes" type="integer"/>
+<Field __index="75" __sourcePath="{}/list/files/deletions" containerType="SINGLE" label="deletions" name="deletions" type="integer"/>
+<Field __index="76" __sourcePath="{}/list/files/filename" containerType="SINGLE" label="filename" name="filename" type="string"/>
+<Field __index="77" __sourcePath="{}/list/files/patch" containerType="SINGLE" label="patch" name="patch" type="string"/>
+<Field __index="78" __sourcePath="{}/list/files/rawUrl" containerType="SINGLE" label="rawUrl" name="rawUrl" type="string"/>
+<Field __index="79" __sourcePath="{}/list/files/sha" containerType="SINGLE" label="sha" name="sha" type="string"/>
+<Field __index="80" __sourcePath="{}/list/files/status" containerType="SINGLE" label="status" name="status" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="3" __referenceCounter="1" __sourcePath="{}/commits/files" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="803c8a23-b870-4a48-8d1a-03162663fe68" _parent_id="__parent_id" _type="Output" id="90f72c55-a65a-41a6-9256-f6ed03fa3537">
+<Record fieldDelimiter="," name="files" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{}/commits/files/body" containerType="SINGLE" label="body" name="body" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="0" __referenceCounter="1" __sourcePath="{}/list" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _type="Input" id="bac09959-65ff-4f19-9b96-6922f9884ea1">
+<Record fieldDelimiter="," name="list" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="0" __sourcePath="{}/list/author/avatarUrl" containerType="SINGLE" label="avatarUrl" name="avatarUrl" type="string"/>
+<Field __index="1" __sourcePath="{}/list/author/blog" containerType="SINGLE" label="blog" name="blog" type="string"/>
+<Field __index="2" __sourcePath="{}/list/author/collaborators" containerType="SINGLE" label="collaborators" name="collaborators" type="integer"/>
+<Field __index="3" __sourcePath="{}/list/author/company" containerType="SINGLE" label="company" name="company" type="string"/>
+<Field __index="4" __sourcePath="{}/list/author/createdAt" containerType="SINGLE" label="createdAt" name="createdAt" type="date"/>
+<Field __index="5" __sourcePath="{}/list/author/diskUsage" containerType="SINGLE" label="diskUsage" name="diskUsage" type="integer"/>
+<Field __index="6" __sourcePath="{}/list/author/email" containerType="SINGLE" label="email" name="email" type="string"/>
+<Field __index="7" __sourcePath="{}/list/author/followers" containerType="SINGLE" label="followers" name="followers" type="integer"/>
+<Field __index="8" __sourcePath="{}/list/author/following" containerType="SINGLE" label="following" name="following" type="integer"/>
+<Field __index="9" __sourcePath="{}/list/author/gravatarId" containerType="SINGLE" label="gravatarId" name="gravatarId" type="string"/>
+<Field __index="10" __sourcePath="{}/list/author/hireable" containerType="SINGLE" label="hireable" name="hireable" type="boolean"/>
+<Field __index="11" __sourcePath="{}/list/author/htmlUrl" containerType="SINGLE" label="htmlUrl" name="htmlUrl" type="string"/>
+<Field __index="12" __sourcePath="{}/list/author/id" containerType="SINGLE" label="id" name="id" type="integer"/>
+<Field __index="13" __sourcePath="{}/list/author/location" containerType="SINGLE" label="location" name="location" type="string"/>
+<Field __index="14" __sourcePath="{}/list/author/login" containerType="SINGLE" label="login" name="login" type="string"/>
+<Field __index="15" __sourcePath="{}/list/author/name" containerType="SINGLE" label="name" name="name" type="string"/>
+<Field __index="16" __sourcePath="{}/list/author/ownedPrivateRepos" containerType="SINGLE" label="ownedPrivateRepos" name="ownedPrivateRepos" type="integer"/>
+<Field __index="17" __sourcePath="{}/list/author/plan/collaborators" containerType="SINGLE" label="collaborators" name="collaborators_1" type="long"/>
+<Field __index="18" __sourcePath="{}/list/author/plan/name" containerType="SINGLE" label="name" name="name_1" type="string"/>
+<Field __index="19" __sourcePath="{}/list/author/plan/privateRepos" containerType="SINGLE" label="privateRepos" name="privateRepos" type="long"/>
+<Field __index="20" __sourcePath="{}/list/author/plan/space" containerType="SINGLE" label="space" name="space" type="long"/>
+<Field __index="21" __sourcePath="{}/list/author/privateGists" containerType="SINGLE" label="privateGists" name="privateGists" type="integer"/>
+<Field __index="22" __sourcePath="{}/list/author/publicGists" containerType="SINGLE" label="publicGists" name="publicGists" type="integer"/>
+<Field __index="23" __sourcePath="{}/list/author/publicRepos" containerType="SINGLE" label="publicRepos" name="publicRepos" type="integer"/>
+<Field __index="24" __sourcePath="{}/list/author/totalPrivateRepos" containerType="SINGLE" label="totalPrivateRepos" name="totalPrivateRepos" type="integer"/>
+<Field __index="25" __sourcePath="{}/list/author/type" containerType="SINGLE" label="type" name="type" type="string"/>
+<Field __index="26" __sourcePath="{}/list/author/url" containerType="SINGLE" label="url" name="url" type="string"/>
+<Field __index="27" __sourcePath="{}/list/commit/author/date" containerType="SINGLE" label="date" name="date" type="date"/>
+<Field __index="28" __sourcePath="{}/list/commit/author/email" containerType="SINGLE" label="email" name="email_1" type="string"/>
+<Field __index="29" __sourcePath="{}/list/commit/author/name" containerType="SINGLE" label="name" name="name_2" type="string"/>
+<Field __index="30" __sourcePath="{}/list/commit/commentCount" containerType="SINGLE" label="commentCount" name="commentCount" type="integer"/>
+<Field __index="31" __sourcePath="{}/list/commit/committer/date" containerType="SINGLE" label="date" name="date_1" type="date"/>
+<Field __index="32" __sourcePath="{}/list/commit/committer/email" containerType="SINGLE" label="email" name="email_2" type="string"/>
+<Field __index="33" __sourcePath="{}/list/commit/committer/name" containerType="SINGLE" label="name" name="name_3" type="string"/>
+<Field __index="34" __sourcePath="{}/list/commit/message" containerType="SINGLE" label="message" name="message" type="string"/>
+<Field __index="35" __sourcePath="{}/list/commit/sha" containerType="SINGLE" label="sha" name="sha" type="string"/>
+<Field __index="36" __sourcePath="{}/list/commit/tree/sha" containerType="SINGLE" label="sha" name="sha_1" type="string"/>
+<Field __index="43" __sourcePath="{}/list/commit/tree/url" containerType="SINGLE" label="url" name="url_1" type="string"/>
+<Field __index="44" __sourcePath="{}/list/commit/url" containerType="SINGLE" label="url" name="url_2" type="string"/>
+<Field __index="45" __sourcePath="{}/list/committer/avatarUrl" containerType="SINGLE" label="avatarUrl" name="avatarUrl_1" type="string"/>
+<Field __index="46" __sourcePath="{}/list/committer/blog" containerType="SINGLE" label="blog" name="blog_1" type="string"/>
+<Field __index="47" __sourcePath="{}/list/committer/collaborators" containerType="SINGLE" label="collaborators" name="collaborators_2" type="integer"/>
+<Field __index="48" __sourcePath="{}/list/committer/company" containerType="SINGLE" label="company" name="company_1" type="string"/>
+<Field __index="49" __sourcePath="{}/list/committer/createdAt" containerType="SINGLE" label="createdAt" name="createdAt_1" type="date"/>
+<Field __index="50" __sourcePath="{}/list/committer/diskUsage" containerType="SINGLE" label="diskUsage" name="diskUsage_1" type="integer"/>
+<Field __index="51" __sourcePath="{}/list/committer/email" containerType="SINGLE" label="email" name="email_3" type="string"/>
+<Field __index="52" __sourcePath="{}/list/committer/followers" containerType="SINGLE" label="followers" name="followers_1" type="integer"/>
+<Field __index="53" __sourcePath="{}/list/committer/following" containerType="SINGLE" label="following" name="following_1" type="integer"/>
+<Field __index="54" __sourcePath="{}/list/committer/gravatarId" containerType="SINGLE" label="gravatarId" name="gravatarId_1" type="string"/>
+<Field __index="55" __sourcePath="{}/list/committer/hireable" containerType="SINGLE" label="hireable" name="hireable_1" type="boolean"/>
+<Field __index="56" __sourcePath="{}/list/committer/htmlUrl" containerType="SINGLE" label="htmlUrl" name="htmlUrl_1" type="string"/>
+<Field __index="57" __sourcePath="{}/list/committer/id" containerType="SINGLE" label="id" name="id_1" type="integer"/>
+<Field __index="58" __sourcePath="{}/list/committer/location" containerType="SINGLE" label="location" name="location_1" type="string"/>
+<Field __index="59" __sourcePath="{}/list/committer/login" containerType="SINGLE" label="login" name="login_1" type="string"/>
+<Field __index="60" __sourcePath="{}/list/committer/name" containerType="SINGLE" label="name" name="name_4" type="string"/>
+<Field __index="61" __sourcePath="{}/list/committer/ownedPrivateRepos" containerType="SINGLE" label="ownedPrivateRepos" name="ownedPrivateRepos_1" type="integer"/>
+<Field __index="62" __sourcePath="{}/list/committer/plan/collaborators" containerType="SINGLE" label="collaborators" name="collaborators_3" type="long"/>
+<Field __index="63" __sourcePath="{}/list/committer/plan/name" containerType="SINGLE" label="name" name="name_5" type="string"/>
+<Field __index="64" __sourcePath="{}/list/committer/plan/privateRepos" containerType="SINGLE" label="privateRepos" name="privateRepos_1" type="long"/>
+<Field __index="65" __sourcePath="{}/list/committer/plan/space" containerType="SINGLE" label="space" name="space_1" type="long"/>
+<Field __index="66" __sourcePath="{}/list/committer/privateGists" containerType="SINGLE" label="privateGists" name="privateGists_1" type="integer"/>
+<Field __index="67" __sourcePath="{}/list/committer/publicGists" containerType="SINGLE" label="publicGists" name="publicGists_1" type="integer"/>
+<Field __index="68" __sourcePath="{}/list/committer/publicRepos" containerType="SINGLE" label="publicRepos" name="publicRepos_1" type="integer"/>
+<Field __index="69" __sourcePath="{}/list/committer/totalPrivateRepos" containerType="SINGLE" label="totalPrivateRepos" name="totalPrivateRepos_1" type="integer"/>
+<Field __index="70" __sourcePath="{}/list/committer/type" containerType="SINGLE" label="type" name="type_1" type="string"/>
+<Field __index="71" __sourcePath="{}/list/committer/url" containerType="SINGLE" label="url" name="url_3" type="string"/>
+<Field __index="99" __sourcePath="{}/list/sha" containerType="SINGLE" label="sha" name="sha_2" type="string"/>
+<Field __index="100" __sourcePath="{}/list/stats/additions" containerType="SINGLE" label="additions" name="additions" type="integer"/>
+<Field __index="101" __sourcePath="{}/list/stats/deletions" containerType="SINGLE" label="deletions" name="deletions" type="integer"/>
+<Field __index="102" __sourcePath="{}/list/stats/total" containerType="SINGLE" label="total" name="total" type="integer"/>
+<Field __index="103" __sourcePath="{}/list/url" containerType="SINGLE" label="url" name="url_4" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="35" __referenceCounter="0" __sourcePath="{}/list/commit/parents" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="bac09959-65ff-4f19-9b96-6922f9884ea1" _parent_id="__parent_id" _type="Input" id="74e6372b-d755-4da8-ab46-8829cf20f16f">
+<Record fieldDelimiter="," name="parents" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="81" __referenceCounter="0" __sourcePath="{}/list/parents" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="bac09959-65ff-4f19-9b96-6922f9884ea1" _parent_id="__parent_id" _type="Input" id="4632793a-4702-41dc-927b-7504d15a255c">
+<Record fieldDelimiter="," name="parents" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __index="81" __sourcePath="{}/list/parents/author/date" containerType="SINGLE" label="date" name="date" type="date"/>
+<Field __index="82" __sourcePath="{}/list/parents/author/email" containerType="SINGLE" label="email" name="email" type="string"/>
+<Field __index="83" __sourcePath="{}/list/parents/author/name" containerType="SINGLE" label="name" name="name" type="string"/>
+<Field __index="84" __sourcePath="{}/list/parents/commentCount" containerType="SINGLE" label="commentCount" name="commentCount" type="integer"/>
+<Field __index="85" __sourcePath="{}/list/parents/committer/date" containerType="SINGLE" label="date" name="date_1" type="date"/>
+<Field __index="86" __sourcePath="{}/list/parents/committer/email" containerType="SINGLE" label="email" name="email_1" type="string"/>
+<Field __index="87" __sourcePath="{}/list/parents/committer/name" containerType="SINGLE" label="name" name="name_1" type="string"/>
+<Field __index="88" __sourcePath="{}/list/parents/message" containerType="SINGLE" label="message" name="message" type="string"/>
+<Field __index="89" __sourcePath="{}/list/parents/sha" containerType="SINGLE" label="sha" name="sha" type="string"/>
+<Field __index="90" __sourcePath="{}/list/parents/tree/sha" containerType="SINGLE" label="sha" name="sha_1" type="string"/>
+<Field __index="97" __sourcePath="{}/list/parents/tree/url" containerType="SINGLE" label="url" name="url" type="string"/>
+<Field __index="98" __sourcePath="{}/list/parents/url" containerType="SINGLE" label="url" name="url_1" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="89" __referenceCounter="0" __sourcePath="{}/list/parents/parents" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="4632793a-4702-41dc-927b-7504d15a255c" _parent_id="__parent_id" _type="Input" id="6b242990-dee9-45d7-a6c8-63b58aaa9b1c">
+<Record fieldDelimiter="," name="parents" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="37" __referenceCounter="0" __sourcePath="{}/list/commit/tree/tree" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="bac09959-65ff-4f19-9b96-6922f9884ea1" _parent_id="__parent_id" _type="Input" id="98263631-5058-4834-afe2-314257f31456">
+<Record fieldDelimiter="," name="tree" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __index="37" __sourcePath="{}/list/commit/tree/tree/mode" containerType="SINGLE" label="mode" name="mode" type="string"/>
+<Field __index="38" __sourcePath="{}/list/commit/tree/tree/path" containerType="SINGLE" label="path" name="path" type="string"/>
+<Field __index="39" __sourcePath="{}/list/commit/tree/tree/sha" containerType="SINGLE" label="sha" name="sha" type="string"/>
+<Field __index="40" __sourcePath="{}/list/commit/tree/tree/size" containerType="SINGLE" label="size" name="size" type="long"/>
+<Field __index="41" __sourcePath="{}/list/commit/tree/tree/type" containerType="SINGLE" label="type" name="type" type="string"/>
+<Field __index="42" __sourcePath="{}/list/commit/tree/tree/url" containerType="SINGLE" label="url" name="url" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="91" __referenceCounter="0" __sourcePath="{}/list/parents/tree/tree" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="4632793a-4702-41dc-927b-7504d15a255c" _parent_id="__parent_id" _type="Input" id="5572b5d4-a791-4936-acc1-869bef5f33ef">
+<Record fieldDelimiter="," name="tree" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __index="91" __sourcePath="{}/list/parents/tree/tree/mode" containerType="SINGLE" label="mode" name="mode" type="string"/>
+<Field __index="92" __sourcePath="{}/list/parents/tree/tree/path" containerType="SINGLE" label="path" name="path" type="string"/>
+<Field __index="93" __sourcePath="{}/list/parents/tree/tree/sha" containerType="SINGLE" label="sha" name="sha" type="string"/>
+<Field __index="94" __sourcePath="{}/list/parents/tree/tree/size" containerType="SINGLE" label="size" name="size" type="long"/>
+<Field __index="95" __sourcePath="{}/list/parents/tree/tree/type" containerType="SINGLE" label="type" name="type" type="string"/>
+<Field __index="96" __sourcePath="{}/list/parents/tree/tree/url" containerType="SINGLE" label="url" name="url" type="string"/>
+</Record>
+</Metadata>
+<Dictionary>
+<Entry id="DictionaryEntry0" input="true" name="inputPayload" output="false" type="object"/>
+<Entry id="DictionaryEntry1" input="false" name="outputPayload" output="true" type="object"/>
+</Dictionary>
+</Global>
+<Phase number="0">
+<Node enabled="enabled" fileURL="dict:inputPayload" guiName="Pojo READER" guiX="20" guiY="20" id="BEAN_READER0" type="BEAN_READER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context outPort="0" sequenceField="__id" xpath=".">
+  <Mapping cloverField="avatarUrl" trim="true" xpath="author/avatarUrl"/>
+  <Mapping cloverField="blog" trim="true" xpath="author/blog"/>
+  <Mapping cloverField="collaborators" trim="true" xpath="author/collaborators"/>
+  <Mapping cloverField="company" trim="true" xpath="author/company"/>
+  <Mapping cloverField="createdAt" trim="true" xpath="author/createdAt"/>
+  <Mapping cloverField="diskUsage" trim="true" xpath="author/diskUsage"/>
+  <Mapping cloverField="email" trim="true" xpath="author/email"/>
+  <Mapping cloverField="followers" trim="true" xpath="author/followers"/>
+  <Mapping cloverField="following" trim="true" xpath="author/following"/>
+  <Mapping cloverField="gravatarId" trim="true" xpath="author/gravatarId"/>
+  <Mapping cloverField="hireable" trim="true" xpath="author/hireable"/>
+  <Mapping cloverField="htmlUrl" trim="true" xpath="author/htmlUrl"/>
+  <Mapping cloverField="id" trim="true" xpath="author/id"/>
+  <Mapping cloverField="location" trim="true" xpath="author/location"/>
+  <Mapping cloverField="login" trim="true" xpath="author/login"/>
+  <Mapping cloverField="name" trim="true" xpath="author/name"/>
+  <Mapping cloverField="ownedPrivateRepos" trim="true" xpath="author/ownedPrivateRepos"/>
+  <Mapping cloverField="collaborators_1" trim="true" xpath="author/plan/collaborators"/>
+  <Mapping cloverField="name_1" trim="true" xpath="author/plan/name"/>
+  <Mapping cloverField="privateRepos" trim="true" xpath="author/plan/privateRepos"/>
+  <Mapping cloverField="space" trim="true" xpath="author/plan/space"/>
+  <Mapping cloverField="privateGists" trim="true" xpath="author/privateGists"/>
+  <Mapping cloverField="publicGists" trim="true" xpath="author/publicGists"/>
+  <Mapping cloverField="publicRepos" trim="true" xpath="author/publicRepos"/>
+  <Mapping cloverField="totalPrivateRepos" trim="true" xpath="author/totalPrivateRepos"/>
+  <Mapping cloverField="type" trim="true" xpath="author/type"/>
+  <Mapping cloverField="url" trim="true" xpath="author/url"/>
+  <Mapping cloverField="date" trim="true" xpath="commit/author/date"/>
+  <Mapping cloverField="email_1" trim="true" xpath="commit/author/email"/>
+  <Mapping cloverField="name_2" trim="true" xpath="commit/author/name"/>
+  <Mapping cloverField="commentCount" trim="true" xpath="commit/commentCount"/>
+  <Mapping cloverField="date_1" trim="true" xpath="commit/committer/date"/>
+  <Mapping cloverField="email_2" trim="true" xpath="commit/committer/email"/>
+  <Mapping cloverField="name_3" trim="true" xpath="commit/committer/name"/>
+  <Mapping cloverField="message" trim="true" xpath="commit/message"/>
+  <Mapping cloverField="sha" trim="true" xpath="commit/sha"/>
+  <Mapping cloverField="sha_1" trim="true" xpath="commit/tree/sha"/>
+  <Mapping cloverField="url_1" trim="true" xpath="commit/tree/url"/>
+  <Mapping cloverField="url_2" trim="true" xpath="commit/url"/>
+  <Mapping cloverField="avatarUrl_1" trim="true" xpath="committer/avatarUrl"/>
+  <Mapping cloverField="blog_1" trim="true" xpath="committer/blog"/>
+  <Mapping cloverField="collaborators_2" trim="true" xpath="committer/collaborators"/>
+  <Mapping cloverField="company_1" trim="true" xpath="committer/company"/>
+  <Mapping cloverField="createdAt_1" trim="true" xpath="committer/createdAt"/>
+  <Mapping cloverField="diskUsage_1" trim="true" xpath="committer/diskUsage"/>
+  <Mapping cloverField="email_3" trim="true" xpath="committer/email"/>
+  <Mapping cloverField="followers_1" trim="true" xpath="committer/followers"/>
+  <Mapping cloverField="following_1" trim="true" xpath="committer/following"/>
+  <Mapping cloverField="gravatarId_1" trim="true" xpath="committer/gravatarId"/>
+  <Mapping cloverField="hireable_1" trim="true" xpath="committer/hireable"/>
+  <Mapping cloverField="htmlUrl_1" trim="true" xpath="committer/htmlUrl"/>
+  <Mapping cloverField="id_1" trim="true" xpath="committer/id"/>
+  <Mapping cloverField="location_1" trim="true" xpath="committer/location"/>
+  <Mapping cloverField="login_1" trim="true" xpath="committer/login"/>
+  <Mapping cloverField="name_4" trim="true" xpath="committer/name"/>
+  <Mapping cloverField="ownedPrivateRepos_1" trim="true" xpath="committer/ownedPrivateRepos"/>
+  <Mapping cloverField="collaborators_3" trim="true" xpath="committer/plan/collaborators"/>
+  <Mapping cloverField="name_5" trim="true" xpath="committer/plan/name"/>
+  <Mapping cloverField="privateRepos_1" trim="true" xpath="committer/plan/privateRepos"/>
+  <Mapping cloverField="space_1" trim="true" xpath="committer/plan/space"/>
+  <Mapping cloverField="privateGists_1" trim="true" xpath="committer/privateGists"/>
+  <Mapping cloverField="publicGists_1" trim="true" xpath="committer/publicGists"/>
+  <Mapping cloverField="publicRepos_1" trim="true" xpath="committer/publicRepos"/>
+  <Mapping cloverField="totalPrivateRepos_1" trim="true" xpath="committer/totalPrivateRepos"/>
+  <Mapping cloverField="type_1" trim="true" xpath="committer/type"/>
+  <Mapping cloverField="url_3" trim="true" xpath="committer/url"/>
+  <Mapping cloverField="sha_2" trim="true" xpath="sha"/>
+  <Mapping cloverField="additions" trim="true" xpath="stats/additions"/>
+  <Mapping cloverField="deletions" trim="true" xpath="stats/deletions"/>
+  <Mapping cloverField="total" trim="true" xpath="stats/total"/>
+  <Mapping cloverField="url_4" trim="true" xpath="url"/>
+  <Context generatedKey="__parent_id" outPort="1" parentKey="__id" sequenceField="__id" xpath="files">
+    <Mapping cloverField="additions" trim="true" xpath="additions"/>
+    <Mapping cloverField="blobUrl" trim="true" xpath="blobUrl"/>
+    <Mapping cloverField="changes" trim="true" xpath="changes"/>
+    <Mapping cloverField="deletions" trim="true" xpath="deletions"/>
+    <Mapping cloverField="filename" trim="true" xpath="filename"/>
+    <Mapping cloverField="patch" trim="true" xpath="patch"/>
+    <Mapping cloverField="rawUrl" trim="true" xpath="rawUrl"/>
+    <Mapping cloverField="sha" trim="true" xpath="sha"/>
+    <Mapping cloverField="status" trim="true" xpath="status"/>
+  </Context>
+</Context>
+]]></attr>
+<attr name="_data_format"><![CDATA[JAVA]]></attr>
+<attr name="schema"><![CDATA[<?xml version="1.0" encoding="UTF-8"?><schema-object>
+  <schema-collection>
+    <typed-object-ref type-ref="org.eclipse.egit.github.core.RepositoryCommit"/>
+  </schema-collection>
+  <typed-object type="org.eclipse.egit.github.core.RepositoryCommit">
+    <typed-object-ref name="author" type-ref="org.eclipse.egit.github.core.User"/>
+    <typed-object-ref name="commit" type-ref="org.eclipse.egit.github.core.Commit"/>
+    <typed-object-ref name="committer" type-ref="org.eclipse.egit.github.core.User"/>
+    <schema-collection name="files" type="java.util.List">
+      <typed-object-ref type-ref="org.eclipse.egit.github.core.CommitFile"/>
+    </schema-collection>
+    <schema-collection name="parents" type="java.util.List">
+      <typed-object-ref type-ref="org.eclipse.egit.github.core.Commit"/>
+    </schema-collection>
+    <typed-object-ref name="sha" type-ref="java.lang.String"/>
+    <typed-object-ref name="stats" type-ref="org.eclipse.egit.github.core.CommitStats"/>
+    <typed-object-ref name="url" type-ref="java.lang.String"/>
+  </typed-object>
+  <typed-object type="int"/>
+  <typed-object type="org.eclipse.egit.github.core.TreeEntry">
+    <typed-object-ref name="mode" type-ref="java.lang.String"/>
+    <typed-object-ref name="path" type-ref="java.lang.String"/>
+    <typed-object-ref name="sha" type-ref="java.lang.String"/>
+    <typed-object-ref name="size" type-ref="long"/>
+    <typed-object-ref name="type" type-ref="java.lang.String"/>
+    <typed-object-ref name="url" type-ref="java.lang.String"/>
+  </typed-object>
+  <typed-object type="org.eclipse.egit.github.core.Commit">
+    <typed-object-ref name="author" type-ref="org.eclipse.egit.github.core.CommitUser"/>
+    <typed-object-ref name="commentCount" type-ref="int"/>
+    <typed-object-ref name="committer" type-ref="org.eclipse.egit.github.core.CommitUser"/>
+    <typed-object-ref name="message" type-ref="java.lang.String"/>
+    <schema-collection name="parents" type="java.util.List">
+      <typed-object-ref type-ref="org.eclipse.egit.github.core.Commit"/>
+    </schema-collection>
+    <typed-object-ref name="sha" type-ref="java.lang.String"/>
+    <typed-object-ref name="tree" type-ref="org.eclipse.egit.github.core.Tree"/>
+    <typed-object-ref name="url" type-ref="java.lang.String"/>
+  </typed-object>
+  <typed-object type="java.lang.String"/>
+  <typed-object type="org.eclipse.egit.github.core.CommitStats">
+    <typed-object-ref name="additions" type-ref="int"/>
+    <typed-object-ref name="deletions" type-ref="int"/>
+    <typed-object-ref name="total" type-ref="int"/>
+  </typed-object>
+  <typed-object type="org.eclipse.egit.github.core.CommitFile">
+    <typed-object-ref name="additions" type-ref="int"/>
+    <typed-object-ref name="blobUrl" type-ref="java.lang.String"/>
+    <typed-object-ref name="changes" type-ref="int"/>
+    <typed-object-ref name="deletions" type-ref="int"/>
+    <typed-object-ref name="filename" type-ref="java.lang.String"/>
+    <typed-object-ref name="patch" type-ref="java.lang.String"/>
+    <typed-object-ref name="rawUrl" type-ref="java.lang.String"/>
+    <typed-object-ref name="sha" type-ref="java.lang.String"/>
+    <typed-object-ref name="status" type-ref="java.lang.String"/>
+  </typed-object>
+  <typed-object type="java.util.Date"/>
+  <typed-object type="org.eclipse.egit.github.core.UserPlan">
+    <typed-object-ref name="collaborators" type-ref="long"/>
+    <typed-object-ref name="name" type-ref="java.lang.String"/>
+    <typed-object-ref name="privateRepos" type-ref="long"/>
+    <typed-object-ref name="space" type-ref="long"/>
+  </typed-object>
+  <typed-object type="long"/>
+  <typed-object type="org.eclipse.egit.github.core.Tree">
+    <typed-object-ref name="sha" type-ref="java.lang.String"/>
+    <schema-collection name="tree" type="java.util.List">
+      <typed-object-ref type-ref="org.eclipse.egit.github.core.TreeEntry"/>
+    </schema-collection>
+    <typed-object-ref name="url" type-ref="java.lang.String"/>
+  </typed-object>
+  <typed-object type="org.eclipse.egit.github.core.User">
+    <typed-object-ref name="avatarUrl" type-ref="java.lang.String"/>
+    <typed-object-ref name="blog" type-ref="java.lang.String"/>
+    <typed-object-ref name="collaborators" type-ref="int"/>
+    <typed-object-ref name="company" type-ref="java.lang.String"/>
+    <typed-object-ref name="createdAt" type-ref="java.util.Date"/>
+    <typed-object-ref name="diskUsage" type-ref="int"/>
+    <typed-object-ref name="email" type-ref="java.lang.String"/>
+    <typed-object-ref name="followers" type-ref="int"/>
+    <typed-object-ref name="following" type-ref="int"/>
+    <typed-object-ref name="gravatarId" type-ref="java.lang.String"/>
+    <typed-object-ref name="hireable" type-ref="boolean"/>
+    <typed-object-ref name="htmlUrl" type-ref="java.lang.String"/>
+    <typed-object-ref name="id" type-ref="int"/>
+    <typed-object-ref name="location" type-ref="java.lang.String"/>
+    <typed-object-ref name="login" type-ref="java.lang.String"/>
+    <typed-object-ref name="name" type-ref="java.lang.String"/>
+    <typed-object-ref name="ownedPrivateRepos" type-ref="int"/>
+    <typed-object-ref name="plan" type-ref="org.eclipse.egit.github.core.UserPlan"/>
+    <typed-object-ref name="privateGists" type-ref="int"/>
+    <typed-object-ref name="publicGists" type-ref="int"/>
+    <typed-object-ref name="publicRepos" type-ref="int"/>
+    <typed-object-ref name="totalPrivateRepos" type-ref="int"/>
+    <typed-object-ref name="type" type-ref="java.lang.String"/>
+    <typed-object-ref name="url" type-ref="java.lang.String"/>
+  </typed-object>
+  <typed-object type="boolean"/>
+  <typed-object type="org.eclipse.egit.github.core.CommitUser">
+    <typed-object-ref name="date" type-ref="java.util.Date"/>
+    <typed-object-ref name="email" type-ref="java.lang.String"/>
+    <typed-object-ref name="name" type-ref="java.lang.String"/>
+  </typed-object>
+</schema-object>
+]]></attr>
+<attr name="__metadata"><![CDATA[true]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Foreach 'files' -&gt; 'files'" guiX="460" guiY="120" id="FOREACH_FILES_FILES" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+output.__parent_id = input.__parent_id;
+//END -> DO NOT REMOVE
+output.body = input.rawUrl + input.blobUrl + input.filename + input.patch;]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Foreach 'list' -&gt; 'commits'" guiX="460" guiY="20" id="FOREACH_LIST_COMMITS" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+//END -> DO NOT REMOVE
+output.comment = input.message;
+output.name = input.sha;
+output.date = input.date_1;
+output.sha = input.sha_2;
+output.author = input.email_1;
+output.url = input.url_4;]]></attr>
+</Node>
+<Node cacheInMemory="true" enabled="enabled" fileURL="dict:outputPayload" guiName="Map&lt;k,v&gt; WRITER" guiX="900" guiY="20" id="MAP_WRITER0" type="MAP_WRITER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<clover:collection clover:name="commits" xmlns:clover="http://www.cloveretl.com/ns/xmlmapping">
+  <item clover:inPort="0">
+    <name>$0.name</name>
+    <comment>$0.comment</comment>
+    <clover:collection clover:name="files">
+      <item clover:inPort="1" clover:key="__parent_id" clover:parentKey="__id">
+        <body>$1.body</body>
+      </item>
+    </clover:collection>
+    <url>$0.url</url>
+    <date>$0.date</date>
+    <sha>$0.sha</sha>
+    <author>$0.author</author>
+    <issue>$0.issue</issue>
+    <duration>$0.duration</duration>
+  </item>
+</clover:collection>]]></attr>
+<attr name="_data_format"><![CDATA[MAP]]></attr>
+</Node>
+<Edge debugMode="true" fromNode="BEAN_READER0:0" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="bac09959-65ff-4f19-9b96-6922f9884ea1" outPort="Port 0 (out)" toNode="FOREACH_LIST_COMMITS:0"/>
+<Edge debugMode="true" fromNode="BEAN_READER0:1" guiBendpoints="" id="Edge2" inPort="Port 0 (in)" metadata="fa257964-5cd7-4e59-9680-29a6c825d248" outPort="Port 1 (out)" toNode="FOREACH_FILES_FILES:0"/>
+<Edge debugMode="true" fromNode="FOREACH_FILES_FILES:0" guiBendpoints="" id="Edge3" inPort="Port 1 (in)" metadata="90f72c55-a65a-41a6-9256-f6ed03fa3537" outPort="Port 0 (out)" toNode="MAP_WRITER0:1"/>
+<Edge debugMode="true" fromNode="FOREACH_LIST_COMMITS:0" guiBendpoints="" id="Edge1" inPort="Port 0 (in)" metadata="803c8a23-b870-4a48-8d1a-03162663fe68" outPort="Port 0 (out)" toNode="MAP_WRITER0:0"/>
+</Phase>
+</Graph>

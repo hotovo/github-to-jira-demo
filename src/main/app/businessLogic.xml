@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:github="http://www.mulesoft.org/schema/mule/github" xmlns:sfdc="http://www.mulesoft.org/schema/mule/sfdc" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:jirarest="http://www.mulesoft.org/schema/mule/jirarest" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.6.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/jirarest http://www.mulesoft.org/schema/mule/jirarest/current/mule-jirarest.xsd
+http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfdc/current/mule-sfdc.xsd
+http://www.mulesoft.org/schema/mule/github http://www.mulesoft.org/schema/mule/github/current/mule-github.xsd
+http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd">
+    <context:property-placeholder location="common.properties"  />
+    <jirarest:config-type name="JiraRest" username="${jira.username}" password="${jira.password}" serverUrl="${jira.host}" doc:name="JiraRest"/>
+    <github:config name="GitHub" connectionUser="${github.username}" connectionPassword="${github.password}" doc:name="GitHub">
+        <github:connection-pooling-profile initialisationPolicy="INITIALISE_ONE" exhaustedAction="WHEN_EXHAUSTED_GROW"/>
+    </github:config>
+    <data-mapper:config name="List_RepositoryCommit__To_Map" transformationGraphPath="list_repositorycommit__to_map.grf" doc:name="List_RepositoryCommit__To_Map"/>
+    <data-mapper:config name="Issue_To_Worklog" transformationGraphPath="issue_to_worklog.grf" doc:name="Issue_To_Worklog"/>
+    <flow name="mainFlow" >
+        <poll doc:name="Poll">
+            <fixed-frequency-scheduler frequency="${poll.frequencyMillis}" startDelay="${poll.startDelayMillis}"/>
+            <github:get-commits config-ref="GitHub" owner="${github.repository.owner}" repository="${github.repository}" doc:name="get all Commits"/>
+        </poll>
+        <data-mapper:transform config-ref="List_RepositoryCommit__To_Map" doc:name="Pojo to Map"/>
+        <foreach doc:name="For Each Commit">
+            <expression-component doc:name="Extract Issue key"><![CDATA[		
+		import java.util.regex.Matcher;
+		import java.util.regex.Pattern;
+		import java.text.ParseException;
+		import java.text.SimpleDateFormat;
+		import java.util.Date;
+
+		String input = payload.comment;
+        String key = null;
+        String duration = null;
+
+        // search for issue key pattern #ISSUE-KEY
+        Pattern pattern = Pattern.compile("(?:#)([A-Z]+-\\d+)");
+        Matcher matcher = pattern.matcher(input);
+        if (matcher.find())
+            key = matcher.group(1);
+            
+
+        // search for duration pattern 1w 1d 1h 1m
+        if (key != null)
+        {
+            String substring = input.substring(input.indexOf(key) + key.length());
+            String durationPattern = "";
+
+            pattern = Pattern.compile("\\d+w");
+            matcher = pattern.matcher(substring);
+            if (matcher.find())
+                durationPattern += matcher.group() + " ";
+
+            pattern = Pattern.compile("\\d+d");
+            matcher = pattern.matcher(substring);
+            if (matcher.find())
+                durationPattern += matcher.group() + " ";
+
+            pattern = Pattern.compile("\\d+h");
+            matcher = pattern.matcher(substring);
+            if (matcher.find())
+                durationPattern += matcher.group() + " ";
+
+            pattern = Pattern.compile("\\d+m");
+            matcher = pattern.matcher(substring);
+            if (matcher.find())
+                durationPattern += matcher.group();
+
+            duration = durationPattern;
+        }
+        
+		payload.duration = duration;
+		payload.issue = key;
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+		payload.started = sdf.format(payload.date);
+		
+		// format custom description for worklog
+		String url = "https://github.com/${github.repository.owner}/${github.repository}/commit/"+payload.sha;
+		payload.worklogdescription = "[View commit on Github|"+url+"] \n"+payload.comment;
+
+]]></expression-component>
+            <expression-filter expression="#[payload.issue != null]" doc:name="filter out commits without issue pattern"/>
+            <flow-ref name="getIssueWorklogsFlow" doc:name="run getIssueWorklogs"/>
+
+        </foreach>
+        <exception-strategy ref="default-exception-strategy" doc:name="Reference Exception Strategy"/>
+    </flow>
+    <sub-flow name="getIssueWorklogsFlow" >
+        <expression-component doc:name="set createWorklog"><![CDATA[flowVars.put("commit",payload);
+flowVars.put("createWorklog",true);
+flowVars.put("issue", payload.issue);
+]]></expression-component>
+
+        <jirarest:issues-issue-get config-ref="JiraRest" entityType="Issue" expand="worklog" issueKeyOrId="#[payload.issue]" doc:name="query for Issue by Issue key"/>
+        <data-mapper:transform config-ref="Issue_To_Worklog" doc:name="Issue To Worklog"/>
+
+        <foreach doc:name="For Each existing worklog">
+            <expression-component doc:name="convert string to date"><![CDATA[import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+Date date = sdf.parse(payload.get('started'));
+payload.put('started', date);]]></expression-component>
+            <expression-filter expression="#[payload.started.getTime() == flowVars.commit.date.getTime()]" doc:name="filter out existing worklogs"/>
+            <expression-component doc:name="store 'false' in createWorklog"><![CDATA[flowVars.put("createWorklog",false);
+
+]]></expression-component>
+
+        </foreach>
+        <flow-ref name="createWorklog" doc:name="run createWorklog"/>
+    </sub-flow>
+    <sub-flow name="createWorklog" >
+        <expression-filter expression="#[flowVars.createWorklog == true]"  doc:name="filter out commits with createWorklog set to 'false'"/>
+        <jirarest:issues-worklog-create config-ref="JiraRest" entityType="Worklog" issueKeyOrId="#[flowVars.issue]" doc:name="insert new Worklog">
+            <jirarest:payload>
+                <jirarest:payload key="started">#[flowVars.commit.started]</jirarest:payload>
+                <jirarest:payload key="timeSpent">#[flowVars.commit.duration]</jirarest:payload>
+                <jirarest:payload key="comment">#[flowVars.commit.worklogdescription]</jirarest:payload>
+            </jirarest:payload>
+        </jirarest:issues-worklog-create>
+        <logger message="worklog created #[payload]" level="INFO" doc:name="Logger"/>
+    </sub-flow>
+    <catch-exception-strategy name="default-exception-strategy">
+        <logger message="#[payload]" level="ERROR" doc:name="Logger"/>
+    </catch-exception-strategy>
+</mule>
